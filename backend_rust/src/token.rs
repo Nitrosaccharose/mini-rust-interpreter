@@ -10,15 +10,23 @@ impl Token {
     }
     pub fn get_type_str(&self) -> String {
         match self.kind {
-            TokenType::LEFTPAREN => "LeftParen".to_string(),
-            TokenType::RIGHTPAREN => "RightParen".to_string(),
+            TokenType::LEFTPAREN => "LEFTPAREN".to_string(),
+            TokenType::RIGHTPAREN => "RIGHTPAREN".to_string(),
             TokenType::PLUS => "PLUS".to_string(),
             TokenType::MINUS => "MINUS".to_string(),
             TokenType::STAR => "STAR".to_string(),
             TokenType::SLASH => "SLASH".to_string(),
             TokenType::CARET => "CARET".to_string(),
+            TokenType::EQUAL => "EQUAL".to_string(),
             TokenType::INTEGER => "INTEGER".to_string(),
             TokenType::FLOAT => "FLOAT".to_string(),
+            TokenType::STRING => "STRING".to_string(),
+            TokenType::LEFTBRACE => "LEFTBRACE".to_string(),
+            TokenType::RIGHTBRACE => "RIGHTBRACE".to_string(),
+            TokenType::IF => "IF".to_string(),
+            TokenType::ELSE => "ELSE".to_string(),
+            TokenType::PRINT => "PRINT".to_string(),
+            TokenType::RETURN => "RETURN".to_string(),
             TokenType::EOF => "EOF".to_string(),
         }
     }
@@ -31,8 +39,16 @@ impl Token {
             TokenType::STAR => "乘号".to_string(),
             TokenType::SLASH => "除号".to_string(),
             TokenType::CARET => "乘方".to_string(),
+            TokenType::EQUAL => "等号".to_string(),
             TokenType::INTEGER => "整数".to_string(),
             TokenType::FLOAT => "浮点数".to_string(),
+            TokenType::STRING => "字符串".to_string(),
+            TokenType::LEFTBRACE => "左花括号".to_string(),
+            TokenType::RIGHTBRACE => "右花括号".to_string(),
+            TokenType::IF => "if".to_string(),
+            TokenType::ELSE => "else".to_string(),
+            TokenType::PRINT => "print".to_string(),
+            TokenType::RETURN => "return".to_string(),
             TokenType::EOF => "结束".to_string(),
         }
     }
