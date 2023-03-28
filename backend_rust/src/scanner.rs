@@ -5,13 +5,14 @@ pub struct Scanner {
     token_vec: Vec<Token>,
 }
 impl Scanner {
-    pub fn new(code_str: String) -> Scanner {
-        let mut scanner = Scanner {
-            code_str,
+    pub fn new() -> Scanner {
+        Scanner {
+            code_str: String::new(),
             token_vec: Vec::new(),
-        };
-        scanner.process_code_str();
-        scanner
+        }
+    }
+    pub fn set_code_str(&mut self, code_str: String) {
+        self.code_str = code_str;
     }
     pub fn get_token_vec(&self) -> &Vec<Token> {
         &self.token_vec
@@ -151,6 +152,7 @@ impl Scanner {
     }
 
     pub fn process_code_str(&mut self) {
+        self.token_vec.clear();
         let code_str_vec: Vec<String> = self
             .code_str
             .split_whitespace()

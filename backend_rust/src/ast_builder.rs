@@ -8,9 +8,9 @@ pub struct ASTBuilder<'a> {
 }
 
 impl ASTBuilder<'_> {
-    pub fn new(token_vec: Vec<Token>) -> ASTBuilder<'static> {
+    pub fn new() -> ASTBuilder<'static> {
         ASTBuilder {
-            token_vec,
+            token_vec: Vec::new(),
             root: None,
             priority_map: [
                 ("PLUS", 1),
@@ -33,6 +33,9 @@ impl ASTBuilder<'_> {
                 ("LN", 0),
             ],
         }
+    }
+    pub fn set_token_vec(&mut self, token_vec: Vec<Token>) {
+        self.token_vec = token_vec;
     }
     pub fn get_root(&self) -> Option<Rc<RefCell<AST>>> {
         self.root.clone()
@@ -136,5 +139,6 @@ impl ASTBuilder<'_> {
             }
         }
         self.root = stack.pop();
+        self.token_vec.clear();
     }
 }
