@@ -16,7 +16,6 @@ impl Scanner {
     pub fn get_token_vec(&self) -> &Vec<Token> {
         &self.token_vec
     }
-    //传入一个字符串计算是否到达了字符串的末尾 用于判断是否扫描结束
     fn is_at_end(&self, current: usize, scan_str: &str) -> bool {
         current >= scan_str.len()
     }
@@ -121,6 +120,11 @@ impl Scanner {
                         "else" => self.add_token(TokenType::ELSE, c),
                         "print" => self.add_token(TokenType::PRINT, c),
                         "return" => self.add_token(TokenType::RETURN, c),
+                        "sin" => self.add_token(TokenType::SIN, c),
+                        "cos" => self.add_token(TokenType::COS, c),
+                        "tan" => self.add_token(TokenType::TAN, c),
+                        "log" => self.add_token(TokenType::LOG, c),
+                        "ln" => self.add_token(TokenType::LN, c),
                         _ => {
                             if is_number {
                                 if is_float {
@@ -155,5 +159,6 @@ impl Scanner {
         for str in code_str_vec.iter() {
             self.scafn_str_without_space(str);
         }
+        self.add_token(TokenType::EOF, "".to_string());
     }
 }

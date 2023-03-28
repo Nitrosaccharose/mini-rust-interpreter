@@ -1,5 +1,5 @@
 use crate::token_type::TokenType;
-
+#[derive(Clone, Debug)]
 pub struct Token {
     pub kind: TokenType, // token的类型
     pub lexeme: String,  // token的文本
@@ -7,6 +7,9 @@ pub struct Token {
 impl Token {
     pub fn new(kind: TokenType, lexeme: String) -> Token {
         Token { kind, lexeme }
+    }
+    pub fn get_lexeme(&self) -> &String {
+        &self.lexeme
     }
     pub fn get_type_str(&self) -> String {
         match self.kind {
@@ -27,6 +30,11 @@ impl Token {
             TokenType::ELSE => "ELSE".to_string(),
             TokenType::PRINT => "PRINT".to_string(),
             TokenType::RETURN => "RETURN".to_string(),
+            TokenType::SIN => "SIN".to_string(),
+            TokenType::COS => "COS".to_string(),
+            TokenType::TAN => "TAN".to_string(),
+            TokenType::LOG => "LOG".to_string(),
+            TokenType::LN => "LN".to_string(),
             TokenType::EOF => "EOF".to_string(),
         }
     }
@@ -49,6 +57,11 @@ impl Token {
             TokenType::ELSE => "else".to_string(),
             TokenType::PRINT => "print".to_string(),
             TokenType::RETURN => "return".to_string(),
+            TokenType::SIN => "sin".to_string(),
+            TokenType::COS => "cos".to_string(),
+            TokenType::TAN => "tan".to_string(),
+            TokenType::LOG => "log".to_string(),
+            TokenType::LN => "ln".to_string(),
             TokenType::EOF => "结束".to_string(),
         }
     }

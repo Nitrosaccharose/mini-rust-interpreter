@@ -1,4 +1,5 @@
 #[allow(dead_code)]
+#[derive(Clone, Debug)]
 pub enum TokenType {
     LEFTPAREN,  // (
     RIGHTPAREN, // )
@@ -17,5 +18,10 @@ pub enum TokenType {
     ELSE,       // else
     PRINT,      // print
     RETURN,     // return
+    SIN,        // sin
+    COS,        // cos
+    TAN,        // tan
+    LOG,        // log
+    LN,         // ln
     EOF,        // 结束
 }
