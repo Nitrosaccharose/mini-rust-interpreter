@@ -1,6 +1,6 @@
 use std::{cell::RefCell, rc::Rc};
 
-use crate::{ast::AST, token::Token, token_type::TokenType, variable_memory::VariableMemory};
+use crate::{ast::AST, token::Token, token_type::TokenType};
 
 pub struct Actuator {
     //执行器拥有一个AST树的根节点
@@ -17,9 +17,9 @@ impl Actuator {
             variable_memory: std::collections::HashMap::new(),
         }
     }
-    pub fn get_root(&self) -> Rc<RefCell<AST>> {
-        self.root.clone()
-    }
+    // pub fn get_root(&self) -> Rc<RefCell<AST>> {
+    //     self.root.clone()
+    // }
     pub fn set_root(&mut self, root: Rc<RefCell<AST>>) {
         self.root = root;
     }

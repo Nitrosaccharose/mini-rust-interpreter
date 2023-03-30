@@ -38,43 +38,43 @@ impl Token {
             TokenType::EOF => "EOF".to_string(),
         }
     }
-    pub fn get_type_cn_str(&self) -> String {
-        match self.kind {
-            TokenType::LEFTPAREN => "左括号".to_string(),
-            TokenType::RIGHTPAREN => "右括号".to_string(),
-            TokenType::PLUS => "加号".to_string(),
-            TokenType::MINUS => "减号".to_string(),
-            TokenType::STAR => "乘号".to_string(),
-            TokenType::SLASH => "除号".to_string(),
-            TokenType::CARET => "乘方".to_string(),
-            TokenType::EQUAL => "等号".to_string(),
-            TokenType::INTEGER => "整数".to_string(),
-            TokenType::FLOAT => "浮点数".to_string(),
-            TokenType::STRING => "字符串".to_string(),
-            TokenType::LEFTBRACE => "左花括号".to_string(),
-            TokenType::RIGHTBRACE => "右花括号".to_string(),
-            TokenType::IF => "if".to_string(),
-            TokenType::ELSE => "else".to_string(),
-            TokenType::PRINT => "print".to_string(),
-            TokenType::RETURN => "return".to_string(),
-            TokenType::SIN => "sin".to_string(),
-            TokenType::COS => "cos".to_string(),
-            TokenType::TAN => "tan".to_string(),
-            TokenType::LOG => "log".to_string(),
-            TokenType::LN => "ln".to_string(),
-            TokenType::EOF => "结束".to_string(),
-        }
-    }
-    pub fn print_token(&self) {
-        let mut type_cn_str = self.get_type_cn_str();
-        if type_cn_str.len() < 4 {
-            type_cn_str.push_str("\t");
-        }
-        println!(
-            "|{:10}|{}\t|{:6}|",
-            self.get_type_str(),
-            type_cn_str,
-            self.lexeme
-        );
-    }
+    // pub fn get_type_cn_str(&self) -> String {
+    //     match self.kind {
+    //         TokenType::LEFTPAREN => "左括号".to_string(),
+    //         TokenType::RIGHTPAREN => "右括号".to_string(),
+    //         TokenType::PLUS => "加号".to_string(),
+    //         TokenType::MINUS => "减号".to_string(),
+    //         TokenType::STAR => "乘号".to_string(),
+    //         TokenType::SLASH => "除号".to_string(),
+    //         TokenType::CARET => "乘方".to_string(),
+    //         TokenType::EQUAL => "等号".to_string(),
+    //         TokenType::INTEGER => "整数".to_string(),
+    //         TokenType::FLOAT => "浮点数".to_string(),
+    //         TokenType::STRING => "字符串".to_string(),
+    //         TokenType::LEFTBRACE => "左花括号".to_string(),
+    //         TokenType::RIGHTBRACE => "右花括号".to_string(),
+    //         TokenType::IF => "if".to_string(),
+    //         TokenType::ELSE => "else".to_string(),
+    //         TokenType::PRINT => "print".to_string(),
+    //         TokenType::RETURN => "return".to_string(),
+    //         TokenType::SIN => "sin".to_string(),
+    //         TokenType::COS => "cos".to_string(),
+    //         TokenType::TAN => "tan".to_string(),
+    //         TokenType::LOG => "log".to_string(),
+    //         TokenType::LN => "ln".to_string(),
+    //         TokenType::EOF => "结束".to_string(),
+    //     }
+    // }
+    // pub fn print_token(&self) {
+    //     let mut type_cn_str = self.get_type_cn_str();
+    //     if type_cn_str.len() < 4 {
+    //         type_cn_str.push_str("\t");
+    //     }
+    //     println!(
+    //         "|{:10}|{}\t|{:6}|",
+    //         self.get_type_str(),
+    //         type_cn_str,
+    //         self.lexeme
+    //     );
+    // }
 }

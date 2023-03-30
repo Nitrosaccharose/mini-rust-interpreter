@@ -1,4 +1,4 @@
-use std::{borrow::Borrow, io::Write};
+use std::io::Write;
 
 mod actuator;
 mod ast;
@@ -6,7 +6,6 @@ mod ast_builder;
 mod scanner;
 mod token;
 mod token_type;
-mod variable_memory;
 
 use std::io::prelude::*;
 use std::net::TcpListener;
@@ -56,17 +55,12 @@ fn handle_connection(
     astbuilder.process_token_vec();
     actuator.set_root(astbuilder.get_root().unwrap());
     let (output_str, status) = actuator.actuate();
-    if status == "EXPRESSION" {
-        println!(">{}", output_str);
-    }
-    input_str = "".to_owned();
 
-    let mut data = String::new();
-    if status == "EXPRESSION" {
-        data = "{\"str\":\"".to_string() + &output_str.to_string() + "\"}";
+    let data = if status == "EXPRESSION" {
+        "{\"str\":\"".to_string() + &output_str.to_string() + "\"}"
     } else {
-        data = "{\"str\":\"\"}".to_owned();
-    }
+        "{\"str\":\"\"}".to_owned()
+    };
 
     let response = format!(
         "HTTP/1.1 200 OK\r\nAccess-Control-Allow-Origin: *\r\nContent-Length: {}\r\n\r\n{}",

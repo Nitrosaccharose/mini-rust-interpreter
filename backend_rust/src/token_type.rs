@@ -1,4 +1,3 @@
-#[allow(dead_code)]
 #[derive(Clone, Debug)]
 pub enum TokenType {
     LEFTPAREN,  // (
