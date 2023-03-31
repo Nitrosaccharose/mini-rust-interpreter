@@ -37,6 +37,7 @@ fn handle_connection(
     if _response.len() > 1 {
         input_str = _response[1].split(" ").collect::<Vec<&str>>()[0].to_string();
     }
+    println!("input_str: {}", input_str);
     if input_str == "" {
         let data = "{\"str\":\"\"}".to_owned();
         let response = format!(
