@@ -5,13 +5,7 @@
 <div align="center">
   基于Rust + Vue 的解释器
 </div>
- <br/>
- <br/>
-<p align="center">
-  <a href="https://github.com/Nitrosaccharose/mini-rust-interpreter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Nitrosaccharose/mini-rust-interpreter" alt="License"></a>
-  <br/>
-  本教程使用AGPL-3.0开源协议
-<p/>
+
 
 ## 🔍 项目预览
 <div align=center>
